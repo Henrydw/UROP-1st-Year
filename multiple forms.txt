@@ -1,0 +1,67 @@
+                        Sampling_interval = form.cleaned_data['Sampling_interval']
+			Trigger_channel = form.cleaned_data['Trigger_channel']
+			Downsampling_ratio = form.cleaned_data['Downsampling_ratio']
+			location = form.cleaned_data['location']
+                        f.write('Sampling interval is = ' + str(Sampling_interval))
+			f.write('\n')
+			f.write('Trigger channel is = ' + str(Trigger_channel))
+			f.write('\n')
+			f.write('Downsampling ratio is = ' + str(Downsampling_ratio))
+			f.write('Location to save ' + str(location))
+                        f.close()
+
+
+
+
+form2 = PicoForm(request.POST)
+form3 = Storag_loc(request.POST)			
+form2 = PicoForm()
+form3 = Storag_loc()
+{'form': form, 'form2':form2, 'form3':form3}
+
+      <h1>Picosettings</h1>
+        {{ form2.as_ul }}
+      <h1>Storage location</h1>
+        {{ form3.as_ul }}
+
+
+
+
+
+
+Bit_Depth = form.cleaned_data['Bit_Depth']
+			Resolution = form.cleaned_data['Resolution']
+			FPS = form.cleaned_data['FPS']
+			f = open('values.txt','a+')
+			f.truncate(0)
+			f.write('Bit Depth is = ' + str(Bit_Depth))
+			f.write('\n')
+			f.write('Resolution value is = ' + str(Resolution))
+			f.write('\n')
+			f.write('FPS value is = ' + str(FPS))
+			f.close()
+
+
+
+
+def home(request):
+
+	if request.method == 'POST':
+		form = S200Form(request.POST)
+		if form.is_valid():
+			Bit_Depth = form.cleaned_data['Bit_Depth']
+			Resolution = form.cleaned_data['Resolution']
+			FPS = form.cleaned_data['FPS']
+			f = open('values.txt','a+')
+			f.truncate(0)
+			f.write('Bit Depth is = ' + str(Bit_Depth))
+			f.write('\n')
+			f.write('Resolution value is = ' + str(Resolution))
+			f.write('\n')
+			f.write('FPS value is = ' + str(FPS))
+			f.close()
+
+		print(Bit_Depth,Resolution,FPS)
+
+	form = S200Form()
+	return render(request, 'home.html', {'form': form})
