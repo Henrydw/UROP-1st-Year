@@ -101,6 +101,9 @@ def submission(request):
 	t = threading.Thread(target = runInParallel, name = 'Parallel', args = (atlas_trial, search))
 	t.start()
 	return render(request, "submission.html")
+
+	#trial for git
+	
 	
 
 
