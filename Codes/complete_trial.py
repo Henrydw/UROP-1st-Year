@@ -5,7 +5,7 @@ from multiprocessing import Process
 #code to create text files
 def atlas_trial():
     print('starting to create file')
-    for i in range(3):
+    for i in range(5):
         path = (r'C:\Users\Aditya Titus\Desktop\Django\Project 2021')
         name = 'No' + str(i) + '.txt'
         complete_name = os.path.join(path, name)
@@ -34,6 +34,10 @@ def read_file(file_path):
 
 def search():
     path = (r'C:\Users\Aditya Titus\Desktop\Django\Project 2021')
+    new_file = os.path.join(path, 'All_values')
+    update_file = open(new_file, 'a+')
+    update_file.truncate(0)
+    update_file.close()
     i = 0
     count = 0
     while count < 4:
@@ -44,6 +48,10 @@ def search():
                 print('loading file = ' + name)
                 k = read_file(search)
                 file_values.append(k)
+                update_file = open(new_file, 'a+')
+                update_file.write(str(k))
+                update_file.write('\n')
+                update_file.close()
                 i += 1
                 sleep(5)                
             else:

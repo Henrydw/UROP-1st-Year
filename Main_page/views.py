@@ -100,10 +100,32 @@ def home(request):
 def submission(request):
 	t = threading.Thread(target = runInParallel, name = 'Parallel', args = (atlas_trial, search))
 	t.start()
-	return render(request, "submission.html")
+	return render(request, "graph.html")
 
-	#trial for git
-	
-	
+def fetch_sensor_values_ajax(request):
+	data={}
+	if request.is_ajax():
+		sensor_data=[]
+		now=datetime.now()
+		ok_date=str(now.strftime('%Y-%m-%d %H:%M:%S'))
+	try:
+
+	    # sr=serial.Serial("COM9",9600)
+		#sr=serial.Serial(com_port,9600)
+		#st=list(str(sr.readline(),'utf-8'))
+		#sr.close()
+		sensor_val=str(''.join(st[:]))
+		if(sensor_val):
+			sensor_data.append(str(sensor_val)+','+ok_date)
+		else:
+			sensor_data.append(str(sensor_val)+','+ok_date)
+	except Exception as e:
+
+		sensor_data.append(str(sensor_val)+','+ok_date)
+		data['result']=sensor_data
+	else:
+		data['result']='Not Ajax'
+	return JsonResponse(data)
+
 
 
