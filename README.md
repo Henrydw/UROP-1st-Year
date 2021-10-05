@@ -8,6 +8,15 @@ The main role of this code is to have a guided user interface for the Atlas whic
 #### The flowchart below is a summary of the structure of the program
 ![](Flowchart.jpg)
 
+## Install and usage
+### Install
+1. make sure django is installed `pip install django`
+2. clone repo `git clone https://github.com/Henrydw/UROP-1st-Year.git`
+### Usage
+From the git repo:
+```
+python manage.py runserver
+```
 ## Codes written
 ### 1) Main_page folder
 - Views.py consists of the main structure of the program. It consists of functions which perform various operations along with rendering specific pages.
