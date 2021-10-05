@@ -42,7 +42,7 @@ The templates folder consists of html pages which are rendered by the functions.
 #### a) Home.html
 This page is used for the home page. It displays the forms as a list and also consists of submit button, which clicked redirects to the submissions page
 #### b) Graph.html
-This page *does not* display live data. It is only used to check if the background codes can run and a live graph can be displayed. It generates a random number every few seconds which is then displayed live on the screen without the need to refresh. 
+This page *does not* display live data. It is only used to check if the background codes can run and a live graph can be displayed. It generates a random number every second which is then displayed live on the screen without the need to refresh. 
 #### c) Atlas_graph.html
 This page is currently under development to display live data from the sensors. Uses the Ajax method to collect and display live data.
 
