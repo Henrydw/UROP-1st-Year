@@ -38,7 +38,7 @@ Urls.py show which function will run when a particular url is typed. While using
 ### 2) Codes folder
 From the Codes folder, *'complete_trial.py' is the only one which is used*. The other codes were written previously before github was set up and are different versions of 'complete_trial.py'. The functions in the code and their explanation are as follows:
 #### a) Atlas_trial
-This creates a text file with 15 values every 5 seconds. It imitates the actual ATLAS code in the sense that a file with data is produced at varying intervals. 
+This creates a text file with 15 values every 5 seconds. It imitates the actual ATLAS code in the sense that a file with data is produced at varying intervals. `path` varible is hardcoded - throws error on cmd line.
 #### b) Read_file
 This reads a text file, extracts the values and returns the sum of all the values. This was written as an example to show how files will be read from the actual printer and may not work in real time.
 #### c) Search
